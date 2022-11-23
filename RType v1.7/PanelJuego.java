@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Controla la ejecución del juego.
+ * Game execution control.
  * 
  * @author Lidia Palacios
  * @version v1.7
@@ -19,8 +19,8 @@ public class PanelJuego extends JPanel implements ActionListener
     
 
     /**
-     * @param numAliens Número de naves alienigenas.Debe ser mayor de cero.
-     * @param vel Factor velocidad del movimiento de los alien (debe ser mayor que cero).
+     * @param numAliens greater than 0
+     * @param vel speed ships factor (greater than 0).
      */
     public PanelJuego(int numAliens, int vel)
     {
@@ -28,9 +28,8 @@ public class PanelJuego extends JPanel implements ActionListener
         actores = new ArrayList<Actor>();
         aliada = new Aliada(ANCHO_PANEL, ALTO_PANEL);
         
-        //inicializamos la coleción aliens con los parámetros pasados al constructor.
+        //Init aliens and actors collection
         cargarAliens(numAliens, vel);
-        //inicializamos la colección actores.
         cargarActores();
         
         setSize(ANCHO_PANEL, ALTO_PANEL);
@@ -44,14 +43,13 @@ public class PanelJuego extends JPanel implements ActionListener
     }
 
     /**
-     * Sobreescribe el método paint(Graphic g)para dibujar los actores en el panel.
+     * Paint actors 
      */
     @Override
     public void paint (Graphics g)
     {
         super.paint(g);
         
-        //recorremos la colección de actores para dibujarlos en pantalla
         for (Actor actor: actores){
             g.setColor(actor.getColor());
             g.fillRect(actor.getX(), actor.getY(), actor.getAncho(), actor.getAlto());
@@ -62,15 +60,10 @@ public class PanelJuego extends JPanel implements ActionListener
     }
     
     /**
-     * Inicializa el ArrayList de los aliens con los parámetros correspondientes al nivel escogido.
-     * Aproximadamente la mitad de los alien creados son tipo A y el resto, tipo B
-     * 
-     * @param numAliens Numero de aliens
-     * @param vel Factor velocidad de los aliens
+     * Almost 50% of aliens are A type, and the rest type B
      */
     private void cargarAliens(int numAliens, int vel)
     {
-        //definimos cuantos aliens van a ser de tipo A y cuántos de tipo B
         int numAliensB = Math.abs(numAliens/2);
         int numAliensA = numAliens - numAliensB;
         for(int i=0 ; i<numAliensA ; i++){
@@ -82,39 +75,31 @@ public class PanelJuego extends JPanel implements ActionListener
         }
     }
     
-    /**
-     * Inicializa el arraylist actores, que contendrá todos los elementos para luego pintarlos
-     * y trabajar con ellos
-     */
     private void cargarActores()
     {
-        //añadimos la nave aliada a la colección de actores
+        //Add allied ship to actors collection
         actores.add(aliada);
-        //añadimos la colección de alines a la de actores
+        //Add aliens collection to actors collection
         actores.addAll(aliens);
-        //añadimos los láseres disparados y en pantalla, si los hay, a la coleción de actores
+        //Add lasers in screen to actor collection
         actores.addAll(aliada.getLaseres());
     }
     
     /**
-     * Limpia el arrayList de actores y vuelve a cargarlo con los nuevos elementos
+     * Clean actors arrayList and charge new elements
      */
     private void actualizarActores()
     {
-        //vaciamos la colección de actores para que esté lista para guardar los nuevos elementos.
         actores.clear();
-        //eliminamos los laser que estén fuera de la pantalla
         eliminarLaseres();
-        //añadimos los elementos actualmente en pantalla a la colección de actores.
         cargarActores();
     }
     
     /**
-     * Elimina los laser que estén fuera de pantalla
+     * clean out-of-screen lasers
      */
     private void eliminarLaseres()
     {
-        // creo un arraylist distinto porque si no estaría trabajando con el mismo y no podría modificarlo
         ArrayList<Laser> laseresAux = new ArrayList<Laser>();
         laseresAux.addAll(aliada.getLaseres()); 
         for(Laser laser:laseresAux){
@@ -125,92 +110,68 @@ public class PanelJuego extends JPanel implements ActionListener
     }
     
     /**
-     * Controla si se ha producido una colisión entre laseres y aliens o entre
-     * la aliada y un alien y en consecuencia realiza la acción que corresponda.
+     * Control collisions and trigger the corresponding action
      */
     private void colision(){
-        //Pasamos los valores de Alien a otra colección para poder borrar los elementos
-        // que colisionan.
         ArrayList<Alien> aliensAux = new ArrayList<Alien>();
         aliensAux.addAll(aliens);
-        // recorremos todo la colección de Aliens
         for(Alien alien:aliensAux){
-            //comprobamos si colisiona con Aliada => fin juego
+            //check allied collision => game over
             Rectangle rAlien = new Rectangle();
             rAlien = alien.getRect();
             Rectangle rAliada = new Rectangle();
             rAliada = aliada.getRect();
 
             if(rAliada.intersects(rAlien)){
-                //creamos un mensaje para avisar de que se ha perdido y es el final del juego
                 JOptionPane pantallaFinal = new JOptionPane();
-                pantallaFinal.showMessageDialog(null, "COLISION ALIADA - ALIEN: ¡¡Fin del Juego!!", "R-Type", JOptionPane.PLAIN_MESSAGE);
-                //sentencia para cerrar el programa
+                pantallaFinal.showMessageDialog(null, "COLISION ALIADA - ALIEN: Â¡Â¡Fin del Juego!!", "R-Type", JOptionPane.PLAIN_MESSAGE);
                 System.exit(0);
             }
             
-            //comprobamos si colisiona alien con algún laser
-            //trabajo con una colección de láseres auxiliar para poder modificar la buena
+            // Check alien-laser collision => delete alien ship and laser
             ArrayList<Laser> laseresAux = new ArrayList<Laser>();
             laseresAux.addAll(aliada.getLaseres());
             for(Laser laser:laseresAux){
                 if(laser.getRect().intersects(alien.getRect())){
-                    //en caso de colisión elimina los objetos laser y alien implicados
                     aliada.eliminarLaser(laser);
                     aliens.remove(alien);
                 }
             }
             
-            //comprobamos si después de las colisiones queda algún Alien en
-            //pantada, sino, partida ganada, volver a jugar.
             if (aliens.size()== 0)
             {
-                //Creamos mensaje de salida
                 JOptionPane pantallaFinal = new JOptionPane();
-                pantallaFinal.showMessageDialog(null, "No quedan aliens, ¡¡HAS GANADO!!", "R-Type", JOptionPane.PLAIN_MESSAGE);
-                
-                //cerramos el panel de juego.
+                pantallaFinal.showMessageDialog(null, "No quedan aliens, Â¡Â¡HAS GANADO!!", "R-Type", JOptionPane.PLAIN_MESSAGE);
                 this.getRootPane().getParent().setVisible(false);
-                //paramos el timer
                 timer.stop(); 
             }
             else if (aliens.size()<0){
-                // se supone q sería imposible llegar a esto.
                 JOptionPane pantallaFinal = new JOptionPane();
-                pantallaFinal.showMessageDialog(null, "Error: Número de aliens negativo", "Error PanelJuego", JOptionPane.ERROR_MESSAGE);
+                pantallaFinal.showMessageDialog(null, "Error: NÃºmero de aliens negativo", "Error PanelJuego", JOptionPane.ERROR_MESSAGE);
             }
         }        
     }
     
-    /**
-    * @return Timer
-    */
     public Timer getTimer()
     {
-     return timer;
-     }
+        return timer;
+    }
     
     /**
-     * Sobreescribe el método actionPerformed de la clase Timer.
-     * Controla lo que sucede por cada golpe de timer
+     * Override actionPerformed method from Timer class.
+     * Control action in every time-tick
      */
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        //nos deshacemos de los actores que ya no están en juego
         actualizarActores();
-        //actualizamos las posiciones de los elementos
         for(Actor actor:actores){
             actor.mover();
         }
-        //comprobamos las colisiones
         colision();
-        //se dibuja la nueva situación
         repaint();
-        
     }
     
-    //Clase interna para los keyListeners
     private class TAdapter extends KeyAdapter
     {
         public void keyReleased (KeyEvent e)

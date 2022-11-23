@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=x\ y\ anchoPanel\ altoPanel
+comment0.target=Laser(int,\ int,\ int,\ int)
+comment0.text=\r\n\ \r\n\ @param\ x\ Posici\u00F3n\ del\ actor\ en\ el\ eje\ horizontal,\ en\ p\u00EDxeles\r\n\ @param\ y\ Posicion\ del\ actor\ en\ el\ eje\ vertical,\ en\ p\u00EDxeles\r\n\ @param\ anchoPanel\ Ancho\ del\ panel\ de\ juego\r\n\ @param\ altoPanel\ Alto\ del\ panel\ de\ juego\r\n
+comment1.params=
+comment1.target=void\ dentroPantalla()
+comment1.text=\r\n\ Comprobamos\ si\ el\ objeto\ esta\ dentro\ del\ panel\r\n\ Si\ esta\ fuera\ visible\ \=\ false;\r\n\ \r\n
+comment2.params=
+comment2.target=boolean\ getVisible()
+comment2.text=\r\n\ @return\ visible\ True\ si\ est\u00E1\ dentro\ de\ pantalla\ o\ False\ si\ est\u00E1\ fuera.\r\n
+numComments=3

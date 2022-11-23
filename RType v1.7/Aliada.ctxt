@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=anchoPanel\ altoPanel
+comment0.target=Aliada(int,\ int)
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ aliada\ Aliada,\ sobreescribe\ al\ de\ Actor\r\n\ \r\n\ @param\ anchoPanel\ Ancho\ del\ panel\ de\ juego\r\n\ @param\ altoPanel\ Alto\ del\ panel\ de\ juego\r\n
+comment1.params=
+comment1.target=void\ dentroPantalla()
+comment1.text=\r\n\ Comprueba\ que\ est\u00E1\ dentro\ del\ panel\ y\ no\ le\ permite\ moverse\ m\u00E1s\ all\u00E1\ de\ los\ bordes\ del\ panel.\r\n
+comment2.params=
+comment2.target=java.util.ArrayList\ getLaseres()
+comment2.text=\r\n\ M\u00E9todo\ de\ acceso\ a\ la\ colecci\u00F3n\ de\ l\u00E1seres\r\n\r\n@return\ arrayList\ con\ los\ laseres\ que\ hay\ en\ pantalla\r\n
+comment3.params=
+comment3.target=void\ disparar()
+comment3.text=\r\n\ Genera\ un\ objeto\ de\ la\ clase\ Laser\ que\ comienza\ su\ movimiento\ desde\ el\ extremo\ derecho\ de\ la\r\n\ nave\ aliada,\ aproximadamente\ de\ su\ centro\ verticalmente.\r\n\ \r\n
+comment4.params=laser
+comment4.target=void\ eliminarLaser(Laser)
+comment4.text=\r\n\ Actualiza\ la\ colecci\u00F3n\ de\ laseres\ eliminando\ el\ seleccionado.\r\n\ \r\n\ @param\ laser\ El\ objeto\ laser\ a\ elmininar\ \r\n
+comment5.params=e
+comment5.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment5.text=\r\n\ Maneja\ lo\ que\ hace\ aliada\ cuando\ se\ presiona\ las\ teclas\ elegidas.\r\n\ \r\n
+comment6.params=e
+comment6.target=void\ keyReleased(java.awt.event.KeyEvent)
+comment6.text=\r\n\ Devuelve\ a\ valores\ de\ reposo\ cuando\ se\ suelta\ la\ tecla.\r\n\ \r\n
+numComments=7

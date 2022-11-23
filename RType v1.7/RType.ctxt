@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=numAliens\ vel
+comment0.target=RType(int,\ int)
+comment0.text=\r\n\ Establece\ par\u00E1metros\ para\ comenzar\ la\ partida.\ Tanto\ numAliens\ y\ vel\ debeben\ ser\ mayor\r\n\ de\ cero.\r\n\ \r\n\ @param\ numAliens\ Numero\ de\ aliens\r\n\ @param\ vel\ Factor\ velocidad\ de\ los\ alien\r\n
+comment1.params=we
+comment1.target=void\ windowDeactivated(java.awt.event.WindowEvent)
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+numComments=3

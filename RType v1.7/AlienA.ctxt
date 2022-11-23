@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=x\ y\ anchoPanel\ altoPanel\ vel
+comment0.target=AlienA(int,\ int,\ int,\ int,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ AlienA\r\n\ \r\n\ @param\ x\ Posici\u00F3n\ del\ actor\ en\ el\ eje\ horizontal,\ en\ p\u00EDxeles\r\n\ @param\ y\ Posicion\ del\ actor\ en\ el\ eje\ vertical,\ en\ p\u00EDxeles\r\n\ @param\ anchoPanel\ Ancho\ del\ panel\ de\ juego\r\n\ @param\ altoPanel\ Alto\ del\ panel\ de\ juego\r\n\ @param\ vel\ Factor\ velocidad\ que\ determina\ la\ rapidez\ de\ las\ naves\ Alien\r\n
+numComments=1

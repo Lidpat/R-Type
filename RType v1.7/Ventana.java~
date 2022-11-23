@@ -1,0 +1,27 @@
+import javax.swing.*;
+import java.awt.*;
+/**
+ * Ventana de Juego
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class Ventana extends JFrame
+{
+    
+    /**
+     * Constructor for objects of class Ventana
+     */
+    public Ventana()
+    {
+       RepresentacionTablero t = new RepresentacionTablero();
+       add(t);
+       setSize(600, 600);
+       setVisible(true);
+    }
+
+   
+    public static void main(String[] args){
+        Ventana p = new Ventana();
+    }
+}

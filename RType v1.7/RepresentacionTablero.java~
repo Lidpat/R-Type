@@ -1,0 +1,40 @@
+import javax.swing.*;
+import java.awt.*;
+
+/**
+ * Panel de juego, donde se van a dibujar las naves
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class RepresentacionTablero extends JPanel
+{
+    // instance variables - replace the example below with your own
+    private int x;
+    private int y;
+
+    /**
+     * Constructor for objects of class RepresentacionTablero
+     */
+    public RepresentacionTablero()
+    {
+        // initialise instance variables
+        x = 0;
+        y = 0;
+     }
+
+    /**
+     * Sobreescribimos método paint para que dibuje las naves.
+     * 
+     * @param  y   a sample parameter for a method
+     * @return     the sum of x and y 
+     */
+    public void paint(Graphics g)
+    {
+        super.paint(g);
+        g.setColor(Color.blue);
+//         g.drawRect(50, 50, 50, 50);
+        g.fillRect(x, y, 10, 10);
+//        g.draw();
+    }
+}

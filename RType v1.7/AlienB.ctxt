@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=x\ y\ anchoPanel\ altoPanel\ vel
+comment0.target=AlienB(int,\ int,\ int,\ int,\ int)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ AlienB\r\n\ \r\n\ @param\ x\ Posici\u00F3n\ del\ actor\ en\ el\ eje\ horizontal,\ en\ p\u00EDxeles\r\n\ @param\ y\ Posicion\ del\ actor\ en\ el\ eje\ vertical,\ en\ p\u00EDxeles\r\n\ @param\ anchoPanel\ Ancho\ del\ panel\ de\ juego\r\n\ @param\ altoPanel\ Alto\ del\ panel\ de\ juego\r\n\ @param\ vel\ Factor\ velocidad\ que\ determina\ la\ rapidez\ de\ las\ naves\ Alien\r\n
+comment1.params=
+comment1.target=void\ setMovimientoVertical()
+comment1.text=\r\n\ Asigna\ el\ sentido\ del\ desplazamiento\ en\ el\ eje\ 'y'\ de\ forma\ aleatoria\r\n
+comment2.params=
+comment2.target=void\ mover()
+comment2.text=\r\n\ Sobreescribe\ el\ m\u00E9todo\ para\ aplicar\ el\ movimiento\ aleatorio\r\n
+numComments=3

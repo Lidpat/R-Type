@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=PantallaInicio()
+comment0.text=\r\n\ Constructor\ de\ la\ clase\ PantallaInicio\r\n
+comment1.params=
+comment1.target=void\ panelInicio()
+comment1.text=\r\n\ Crea\ el\ panel\ inicial\ del\ juego\ y\ sus\ componentes\r\n\ \r\n
+comment2.params=numAlien\ vel
+comment2.target=void\ iniciarNivel(int,\ int)
+comment2.text=\r\n\ Inicializa\ la\ partida\ con\ el\ nivel\ escogido.\ \r\n\ Deja\ todo\ listo\ para\ devolver\ el\ control\ a\ la\ pantalla\ de\ inicio\ \r\n\ cuando\ finalize\ el\ juego.\ \r\n\ \r\n\ @param\ vel\ Velocidad\ del\ juego\r\n\ @param\ numAlien\ El\ n\u00FAmero\ de\ aliens\ con\ que\ se\ inicia\ la\ partida.\ \r\n
+numComments=3

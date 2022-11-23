@@ -1,23 +1,21 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+#RType :joystick:
+PURPOSE OF PROJECT: Develop a simplified R-Type using OOP
 
-PROJECT TITLE: R-Type
-PURPOSE OF PROJECT: Juego R-Type
-VERSION or DATE: v 1.7
-HOW TO START THIS PROJECT: Llamar al mÈtodo main() contenido en la clase RType
+VERSION: v 1.7
+HOW TO START THIS PROJECT: Call main() method, located in RType class.
 AUTHORS: Lidia Palacios
 USER INSTRUCTIONS: 
-Una vez arrancado el juego, seleccionar el nivel en la pantalla inicial. 
+Once the programme has started, select the level of the game on the main screen.
 
-La finalidad del juego es destruir todos los aliens. Para ello deber·s alcanzarle con el laser. 
-Para disparar presiona la "barra espaciadora". 
-Para mover la nave aliada se usan las flechas. 
+The aim of the game is to destroi all the aliens. To do this you must hit them with the laser. 
 
-Si consigues destruir todas las naves alienÌgenas, ganar·s y podr·s jugar otra partida. 
+To shot, press the space bar.
 
-Si una nave alienigena choca con la nave aliada, habr·s perdido y supondr· el fin del juego.
+To move your space ship use the arrows. :arrow_up: :arrow_right: :arrow_down: :arrow_left:
+
+
+Si consigues destruir todas las naves alien√≠genas, ganar√°s y podr√°s jugar otra partida. 
+
+Si una nave alienigena choca con la nave aliada, habr√°s perdido y supondr√° el fin del juego.
 
 
